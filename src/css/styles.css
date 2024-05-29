@@ -251,6 +251,10 @@ header {
     margin: 5px 0;
 }
 
+#notice-list a:hover {
+    color: #EA4C89;
+}
+
 #notice-list a i {
     font-size: 25px;
     margin-right: 5px;
@@ -349,9 +353,8 @@ header {
     }
 }
 
-
-
+/* -------------------------------------Body--------------------------------------------*/
 body {
-    background-color: aqua;
+    background-color: #FBF5F4;
     height: 1000px;
 }
