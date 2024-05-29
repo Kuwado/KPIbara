@@ -1,0 +1,592 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+    font-size: 18px;
+    a {
+        text-decoration: none;
+    }
+    list-style: none;
+}
+
+/* -----------------------------------------Body-------------------------------------*/
+body {
+    background-color: #FBF5F4;
+    height: 1000px;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    min-height: calc(100vh - 100px);
+    background-color: #FBF5F4;
+}
+
+.card {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.card-header {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #EA4C89;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.personal-info,
+.kpi-overview {
+    width: 48%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.avatar-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.personal-info h4 {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.row label {
+    flex: 0 0 30%;
+    max-width: 30%;
+    font-weight: 600;
+}
+
+.row .col-sm-9 {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#edit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #EA4C89;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#edit-button:hover {
+    background-color: #d83c75;
+}
+
+.kpi-overview {
+    padding: 20px;
+}
+
+.kpi-overview h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #EA4C89;
+}
+h4 {
+    color: #EA4C89;
+    font-weight: 600;
+}
+
+.list-group-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+#kpi-chart{
+    margin-top: 80px;
+}
+/* -----------------------------------------Edit Profile-------------------------------------*/
+
+.edit-profile-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #EA4C89;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-profile-form .form-group {
+    margin-bottom: 20px;
+}
+
+.edit-profile-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.edit-profile-form input[type="text"],
+.edit-profile-form input[type="email"],
+.edit-profile-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.avatar-container .btn {
+    margin-top: 10px;
+    background: none; 
+    border: none; 
+    color: #EA4C89;
+}
+.avatar-container .btn:hover {
+    background-color: white;
+}
+.edit-profile-container button {
+    padding: 12px 20px;
+    background-color: #EA4C89;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.edit-profile-container button:hover{
+    background-color: #d83c75;
+}
+.avatar-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.avatar-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+    .edit-profile-container {
+        width: 95%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .personal-info, .kpi-overview {
+        width: 100%;
+        margin-bottom: 20px;
+        border-right: none;
+    }
+
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* -----------------------------------------------Header-------------------------------------------- */
+header {
+    background-color: #ffffff;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- left-header --- */
+#left-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* menu */
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.menu-item {
+    color: #EA4C89;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-left: 15px;
+}
+
+.menu-item i {
+    font-size: 34px;
+    margin-right: 5px;
+}
+
+.menu-item span {
+    font-weight: 700;
+    font-size: 22px;
+    padding-right: 15px;
+    border-right: 3px solid #EA4C89;
+}
+
+.menu-item:last-child span{
+    border-right: none;
+}
+
+.menu-item:hover {
+    opacity: 1;
+    i, span {
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+#menu .active {
+    opacity: 1;
+}
+
+#kpi {
+    position: relative; /* Đặt phần tử cha của kpi-list là relative */
+}
+
+.kpi-list {
+    position: absolute;
+    top: 80%; 
+    left: 0; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 10px 10px; 
+    width: max-content;
+    visibility: hidden;
+    transition: margin 0.5s ease;
+    margin-top: 50px;
+}
+
+.kpi-list li {
+    padding: 10px;
+}
+
+.kpi-list li a {
+    display: flex;
+    align-items: center;
+    color: #EA4C89;
+    opacity: 0.6;
+}
+
+.kpi-list li a:hover {
+    opacity: 1;
+}
+
+.kpi-list li a i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.kpi-list li a span {
+    font-weight: 700;
+}
+
+.kpi-list:hover, #kpi:hover + .kpi-list {
+    visibility: visible;
+    margin-top: 0;
+}
+
+/* --- right-header --- */
+#right-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right-header button i {
+    font-size: 34px;
+    color: #EA4C89;
+}
+
+#right-header button:hover {
+    background-color: rgba(236, 207, 203, 0.5);
+}
+
+/* avatar */
+#avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #EA4C89;
+    margin-left: 15px;
+    position: relative;
+}
+
+#avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* avatar-menu */
+#avatar-menu {
+    background-color: white;
+    position: absolute;
+    top: 90%;
+    right: -20%;
+    border-radius: 30px 0 30px 0;
+    width: 300px;
+    padding-bottom: 10px;
+    display: none;
+    box-shadow: 1px 1px 5px#888888;
+    transition: right 0.7s ease;
+}
+
+.avatar-menu-item {
+    padding: 8px 0;
+    a {
+        color: black;
+    }
+}
+
+.avatar-menu-item a:hover {
+    color: #EA4C89;
+}
+
+.avatar-menu-item a i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#preview-profile {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#preview-profile img {
+    width: 20%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#preview-profile div {
+    width: 80%;
+}
+
+#preview-infor span:first-child {
+    color: #EA4C89;
+    font-weight: 700;
+}
+
+#preview-infor span:last-child {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* notice */
+.bg-primary {
+    background-color: #5e5251 !important;
+}
+
+#notice-number {
+    top: 15%;
+}
+
+#notice {
+    position: absolute;
+    width: 600%;
+    height: 335px;
+    top: 400%;
+    right: -20%;
+    border-radius: 30px 0 30px 0;
+    background-color: white;
+    padding: 20px 5px 20px 20px;
+    box-shadow: 1px 1px 5px#888888;
+    display: none;
+    transition: top 0.7s ease;
+}
+
+#notice-list {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#notice-list a {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 5px 0;
+}
+
+#notice-list a:hover {
+    color: #EA4C89;
+}
+
+#notice-list a i {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+#notice-list a span {
+    font-weight: 500;
+}
+
+#notice-list .active {
+    opacity: 0.6;
+}
+
+#notice-list::-webkit-scrollbar { /* Tùy chỉnh thanh cuộn cho trình duyệt Chrome và Safari */
+    width: 5px;
+}
+
+#notice-list::-webkit-scrollbar-thumb { /* Tùy chỉnh phần thumb của thanh cuộn cho trình duyệt Chrome và Safari */
+    background-color: #EA4C89;
+    border-radius: 10px;
+}
+
+#notice-list::-webkit-scrollbar-track { /* Tùy chỉnh phần track của thanh cuộn cho trình duyệt Chrome và Safari */
+    background-color: transparent;
+}
+/* ---- sidebar ----*/
+.bar-btn {
+    display: none;
+}
+
+.bar-btn i{
+    font-size: 34px;
+    color: #EA4C89;
+}
+
+#sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0; /* hoặc right: 0 nếu bạn muốn đặt ở phía bên phải */
+    width: 100%;
+    display: none;
+    height: 50px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+}
+
+#sidebar .active {
+    opacity: 1;
+    i {
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.sidebar-item {
+    color: #EA4C89;
+    opacity: 0.6;
+}
+
+.sidebar-item i{
+    font-size: 32px;
+}
+
+@media only screen and (max-width: 430px) {
+    * {
+        font-size: 16px;
+    }
+
+    main {
+        padding-top: 60px;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    #logo img {
+        height: 40px;
+    }
+
+    .bar-btn {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #avatar {
+        height: 50px;
+        width: 50px;
+    }
+
+    .right-icon {
+        display: none;
+    }
+
+    #sidebar {
+        display: flex;
+    }
+}
+
