@@ -3,9 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KPIbara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/register.css">
 </head>
 <body>
-    Register
+    <div class="container">
+        <div class="register-box">
+            <img src="/src/images/logo.png" alt="logo" class="logo">
+
+            <form>
+                <div class="textbox">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Tên đăng nhập" name="username">
+                </div>
+                <div class="textbox">
+                    <i class="fa-solid fa-signature"></i>
+                    <input type="text" placeholder="Tên hiển thị" name="displayname">
+                </div>
+                <div class="textbox"> 
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="text" placeholder="Email" name="email">
+                </div>               
+                <div class="textbox">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" placeholder="Mật khẩu" name="password">
+                </div>
+                <div class="textbox">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" placeholder="Nhập lại mật khẩu" name="confirmpassword">
+                </div>
+                <div class="row">
+                    <div class="textbox">
+                        <i class="fa-solid fa-calendar-day"></i>
+                        <input type="text" placeholder="Ngày sinh" name="birthday">
+                    </div>
+                    <div class="gender">
+                        <i class="fa-solid fa-venus-mars"></i>
+                        <select id="gender" name="gender">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Không xác định">Không xác định</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="textbox">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="text" placeholder="Số điện thoại" name="phonenumber">
+                </div>
+                <button type="submit" class="btn">Đăng ký</button>
+                
+            </form>
+
+            <div class="login">
+                <p>Bạn đã có tài khoản? <a href="/src/view/login.html">Đăng nhập</a></p>
+            </div>
+
+
+    </div>
 </body>
 </html>

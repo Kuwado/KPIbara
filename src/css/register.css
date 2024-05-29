@@ -17,13 +17,23 @@ body {
     height: 100%;
 }
 
-.login-box {
+.register-box {
     background: white;
     padding: 40px;
     width: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
+}
+
+.logo {
+    padding-bottom: 10%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px; 
 }
 
 .textbox {
@@ -33,7 +43,25 @@ body {
     transition: border-bottom 0.3s ease;
 }
 
-.textbox i {
+.gender {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    border-bottom: 2px solid #eccfcb;
+    position: relative;
+}
+
+.gender select {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    transition: border-bottom 0.3s ease;
+}
+
+.textbox i, .gender i {
     position: absolute;
     top: 50%;
     left: 10px;
@@ -48,16 +76,6 @@ body {
     background: none;
     font-size: 18px;
     transition: border-bottom 0.3s ease;
-}
-
-.forgot {
-    text-decoration: none;
-    color: #ea4c89;
-    font-size: 18px;
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: right;
 }
 
 .btn {
@@ -77,44 +95,17 @@ body {
     background: linear-gradient(to right, #e06666, #ea4c89);
 }
 
-.social {
-    padding-bottom: 5%;
+.login {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
 }
 
-.social a {
-    margin: 0 10px;
-    font-size: 25px;
-    color: #3b5998;
+.login a {
     text-decoration: none;
-}
-
-.social a:nth-child(2) {
-    color: #1da1f2;
-}
-
-.social a:nth-child(3) {
-    color: #0088cc;
-}
-
-.social a:hover {
     color: #ea4c89;
 }
 
-form p {
-    font-size: 18px;
-    color: black;
-}
-
-.register {
-    font-size: 18px;
-    color: #ea4c89;
-    text-decoration: none;
-}
-
-.register:hover {
+.login a:hover {
     text-decoration: underline;
-}
-
-.logo {
-    padding-bottom: 10%;
 }
