@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KPIbara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css">
     <link rel="stylesheet" href="/src/css/register.css">
 </head>
 <body>
@@ -35,9 +36,10 @@
                 </div>
                 <div class="row">
                     <div class="textbox">
-                        <i class="fa-solid fa-calendar-day"></i>
+                        <i class="far fa-calendar-alt" onclick="birthdayPicker()"></i>
                         <input type="text" placeholder="Ngày sinh" name="birthday">
                     </div>
+                    
                     <div class="gender">
                         <i class="fa-solid fa-venus-mars"></i>
                         <select id="gender" name="gender">
@@ -58,8 +60,11 @@
             <div class="login">
                 <p>Bạn đã có tài khoản? <a href="/src/view/login.html">Đăng nhập</a></p>
             </div>
-
-
+        </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
+    <script src="../js/register.js"></script>
+
 </body>
 </html>
