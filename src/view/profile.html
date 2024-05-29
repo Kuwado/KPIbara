@@ -17,39 +17,13 @@
 <body>
     <!----------------------------------------------Start header---------------------------------------------->
     <header class="container-fluid header">
-        <div id="sidebar">
-            <div id="sidebar-infor">
-                <img src="/src/images/avatar.jpg">
-                <div id="sidebar-preview">
-                    <span>Lưu Việt Hoàn</span>
-                    <span>viethoan557723@gmail.com</span>
-                </div>
-            </div>
-            <a href="/src/view/home.html" class="sidebar-item"><i class="fa-solid fa-house"></i><span>Trang chủ</span></a>
-            <div class="sidebar-item"  id="sidebar-kpi">
-                <div href="/src/view/viewkpi.html" onclick="showKpi()"><i class="fa-solid fa-chart-simple"></i><span>KPI</span></div>
-                <ul class="sidebar-kpi-list">
-                    <li><a href="/src/view/viewkpi.html"><i class="fa-solid fa-clipboard-list"></i><span>Danh sách KPI</span></a></li>
-                    <li><a href="/src/view/makekpi.html"><i class="fa-solid fa-plus"></i><span>Thiết lập KPI</span></a></li>
-                </ul>
-            </div>
-            <a href="/src/view/task.html" class="sidebar-item"><i class="fa-solid fa-list-check"></i><span>Công việc</span></a>
-            <a href="/src/view/achivement.html" class="sidebar-item"><i class="fa-solid fa-trophy"></i><span>Thành tựu</span></a>
-        </div>
-
         <div id="left-header">
             <div id="logo">
-                <img src="/src/images/logo.png">
+                <img src="/src/images/logo.png" id="logo">
             </div>
             <div id="menu">
                 <a href="/src/view/home.html" class="menu-item active"><i class="fa-solid fa-house"></i><span>Trang chủ</span></a>
-                <div class="position-relative">                
-                    <a href="/src/view/viewkpi.html" class="menu-item" id="kpi"><i class="fa-solid fa-chart-simple"></i><span>KPI</span></a>
-                    <ul class="kpi-list">
-                        <li><a href="/src/view/viewkpi.html"><i class="fa-solid fa-clipboard-list"></i><span>Danh sách KPI</span></a></li>
-                        <li><a href="/src/view/makekpi.html"><i class="fa-solid fa-plus"></i><span>Thiết lập KPI</span></a></li>
-                    </ul>
-                </div>
+                <a href="/src/view/makekpi.html" class="menu-item"><i class="fa-solid fa-chart-simple"></i><span>KPI</span></a>
                 <a href="/src/view/task.html" class="menu-item"><i class="fa-solid fa-list-check"></i><span>Công việc</span></a>
                 <a href="/src/view/achivement.html" class="menu-item"><i class="fa-solid fa-trophy"></i><span>Thành tựu</span></a>
             </div>
@@ -57,13 +31,10 @@
 
         <div id="right-header">
             <button class="right-item btn"><i class="fa-solid fa-circle-question"></i></button>
-            <div class="position-relative">
-                <button class="right-item btn position-relative">
-                    <i class="fa-solid fa-bell"></i>
-                    <span class="position-absolute translate-middle badge bg-primary" id="notice">12</span>
-                </button>
-            </div>
-
+            <button class="right-item btn position-relative">
+                <i class="fa-solid fa-bell"></i>
+                <span class="position-absolute translate-middle badge bg-primary" id="notice">12</span>
+            </button>
             <button class="right-item position-relative" id="avatar" onclick="showAvatarMenu()"><img id="avatar-img" src="/src/images/avatar.jpg"></button>
             <ul id="avatar-menu">
                 <li class="avatar-menu-item" id="preview-profile">
@@ -79,8 +50,6 @@
                 <li class="avatar-menu-item"><a href="/src/view/login.html"><i class="fa-solid fa-right-from-bracket"></i><span>Đăng xuất</span></a></li>
             </ul>
         </div>
-
-        <button class="btn bar-btn" onclick="showSidebar()"><i class="fa-solid fa-bars"></i></button>
     </header>
     <!---------------------------------------------End Header------------------------------------------------->
 

@@ -33,6 +33,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 }
 
 .menu-item {
@@ -76,6 +77,52 @@ header {
     }
 }
 
+#kpi {
+    position: relative; /* Đặt phần tử cha của kpi-list là relative */
+}
+
+.kpi-list {
+    position: absolute;
+    top: 80%; 
+    left: 0; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 10px 10px; 
+    width: max-content;
+    visibility: hidden;
+    transition: margin 0.5s ease;
+    margin-top: 50px;
+}
+
+.kpi-list li {
+    padding: 10px;
+}
+
+.kpi-list li a {
+    display: flex;
+    align-items: center;
+    color: #EA4C89;
+    opacity: 0.6;
+}
+
+.kpi-list li a:hover {
+    opacity: 1;
+}
+
+.kpi-list li a i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.kpi-list li a span {
+    font-weight: 700;
+}
+
+.kpi-list:hover, #kpi:hover + .kpi-list {
+    visibility: visible;
+    margin-top: 0;
+}
+
 /* --- right-header --- */
 #right-header {
     display: flex;
@@ -88,7 +135,9 @@ header {
     color: #EA4C89;
 }
 
-#right-header
+#right-header button:hover {
+    background-color: rgba(236, 207, 203, 0.5);
+}
 
 /* avatar */
 #avatar {
@@ -107,14 +156,60 @@ header {
     object-fit: cover;
 }
 
+/* avatar-menu */
 #avatar-menu {
-    background-color: aqua;
+    background-color: white;
     position: absolute;
-    top: 100%;
-    right: 0%;
+    top: 90%;
+    right: -20%;
     border-radius: 30px 0 30px 0;
-    width: 250px;
+    width: 300px;
+    padding-bottom: 10px;
+    display: none;
+    box-shadow: 1px 1px 5px#888888;
+    transition: right 0.7s ease;
+}
 
+.avatar-menu-item {
+    padding: 8px 0;
+    a {
+        color: black;
+    }
+}
+
+.avatar-menu-item a:hover {
+    color: #EA4C89;
+}
+
+.avatar-menu-item a i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#preview-profile {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#preview-profile img {
+    width: 20%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#preview-profile div {
+    width: 80%;
+}
+
+#preview-infor span:first-child {
+    color: #EA4C89;
+    font-weight: 700;
+}
+
+#preview-infor span:last-child {
+    font-size: 14px;
+    opacity: 0.7;
 }
 
 /* notice */
@@ -127,11 +222,128 @@ header {
 }
 
 
+/* ---- sidebar ----*/
+.bar-btn {
+    display: none;
+}
 
+.bar-btn i{
+    font-size: 34px;
+    color: #EA4C89;
+}
+
+#sidebar {
+    position: absolute;
+    top:85%;
+    right: -70%;
+    width: 69%;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px 0 30px 0;
+    box-shadow: 1px 1px 5px#888888;
+    transition: right 0.7s ease;
+}
+
+#sidebar-infor {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#sidebar-infor img {
+    width: 20%;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+#sidebar-infor div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar-infor div span:first-child {
+    font-weight: 700;
+    color: #EA4C89;
+}
+
+#sidebar-infor div span:last-child {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.sidebar-item {
+    color: #EA4C89;
+    padding: 7px 5px;
+}
+
+.sidebar-item i{
+    margin-right: 5px;
+    font-size: 24px;
+}
+
+.sidebar-item span{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#sidebar-kpi {
+    cursor: pointer;
+}
+
+.sidebar-kpi-list {
+    margin-bottom: 0;
+    display: none;
+}
+
+.sidebar-kpi-list li {
+    opacity: 0.8;
+    padding-top: 5px;
+}
+
+.sidebar-kpi-list li span{
+    font-size: 16px;
+    color: #EA4C89;
+}
+
+.sidebar-kpi-list li i{
+    font-size: 22px;
+    color: #EA4C89;
+}
+
+@media only screen and (max-width: 430px) {
+    * {
+        font-size: 16px;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    #logo img {
+        height: 40px;
+    }
+
+    .bar-btn {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #right-header {
+        display: none;
+    }
+}
 
 
 
 body {
-    background-color: red;
+    background-color: aqua;
     height: 1000px;
 }
