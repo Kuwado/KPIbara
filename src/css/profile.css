@@ -311,7 +311,7 @@ header {
 }
 
 #kpi {
-    position: relative; /* Đặt phần tử cha của kpi-list là relative */
+    position: relative; 
 }
 
 .kpi-list {
