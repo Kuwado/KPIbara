@@ -3,6 +3,11 @@ const helloWorld = () => {
 }
 
 const birthdayPicker = () => {
-    alert("Hello World");
+    //alert("Hello World");
 };
+
+const handleSubmit = (event) => {
+    event.preventDefault();           
+    window.location.href = "../view/main.html";
+}
 

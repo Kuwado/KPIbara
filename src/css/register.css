@@ -111,3 +111,7 @@ body {
 .login a:hover {
     text-decoration: underline;
 }
+
+.logo {
+    padding-bottom: 20px;
+}
