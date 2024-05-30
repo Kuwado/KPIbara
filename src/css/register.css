@@ -18,15 +18,14 @@ body {
 }
 
 .register-box {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px auto 40px auto;
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
     align-items: center;
     background-color: white;
     padding: 40px;
-    width: 400px;
+    width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
@@ -114,4 +113,11 @@ body {
 
 .logo {
     padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 430px){
+    .register-box {
+        width: 70%;
+        margin: auto 5% auto 5%;
+    }
 }
