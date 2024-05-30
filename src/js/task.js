@@ -657,7 +657,7 @@ var FullCalendar = (function (exports) {
         return true;
     }
 
-    const DAY_IDS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    const DAY_IDS = ['cn', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
     // Adding
     function addWeeks(m, n) {
         let a = dateToUtcArray(m);

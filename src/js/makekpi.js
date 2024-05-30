@@ -179,20 +179,13 @@ const successKPI = document.getElementById("success-kpi");
 
 // Thêm sự kiện submit cho form
 myForm.addEventListener("submit", function(event) {
-    // Ngăn chặn hành động mặc định của form
     event.preventDefault();
-    
-    // Hiển thị thông báo
-    successKPI.style.display = "block";
-
-    // Đặt thời gian để ẩn phần tử sau 2 giây
+    successKPI.style.display = "flex";
     setTimeout(function() {
         successKPI.style.display = "none";
-        window.location.href = "/src/view/makekpi.html"; // Thay đổi URL nếu cần
+        window.location.href = "/src/view/makekpi.html"; 
     }, 2000);
 });
-
-
 
 
 

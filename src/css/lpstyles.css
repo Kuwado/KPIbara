@@ -1,9 +1,7 @@
 .landing-header {
-    padding: 0 100px 0 200px;
+    padding-right: 100px;
 }
- *{
-    font-family: 'Roboto';
- }
+
 .login-signup-button button:first-child{
     border: none;
     background-color: #ffffff;
