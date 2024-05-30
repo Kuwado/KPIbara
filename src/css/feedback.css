@@ -53,17 +53,23 @@
     transition: border-bottom 0.3s ease;
 }
 
+.box {
+    display: flex;
+    justify-content: center;
+}
+
 .mybtn {
-    background: linear-gradient(to left, #e06666, #f5d1d1);
+    /* background: linear-gradient(to left, #e06666, #f5d1d1); */
+    background-color: #ea4c89;
     border: none;
     padding: 10px 20px;
     color: white;
     font-size: 18px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 20px 0 20px 0;
     display: inline-block;
     margin: 10px 0;
-    width: 100%;
+    width: 20%;
 }
 
 .mybtn:hover {
