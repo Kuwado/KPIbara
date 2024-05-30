@@ -157,21 +157,69 @@ function removeDayFromMonth(event) {
 
 addMonthBtn.addEventListener("click", addDayToMonth);
 
+// Task kpi
 
+// Chon loai task
+const taskSelect = document.querySelector("#task-kpi-type-option");
+const sameTask = document.querySelector("#same-task");
+const levelTask = document.querySelector("#level-task");
 
+function taskWeight() {
+    var selectedValue = taskSelect.options[taskSelect.selectedIndex].value;
 
+    if (selectedValue === "same") {
+        sameTask.style.display = "block";
+        levelTask.style.display = "none";
+    } else if (selectedValue === "level") {
+        sameTask.style.display = "none";
+        levelTask.style.display = "block";    
+    }
+}
 
+// Same task
+const sameContainer = document.getElementById("same-task-list");
+const addSameBtn = document.getElementById("add-task-in-same");
 
+function addTaskToSame() {
+    const optionTemplate = document.querySelector(".same-task-item");
+    const optionClone = optionTemplate.cloneNode(true);
+    sameContainer.appendChild(optionClone);
 
+    const removeBtn = optionClone.querySelector('.remove-task-in-same-btn');
+    removeBtn.addEventListener("click", removeTaskFromSame);
+}
 
-// notice
-// const successKPI = document.querySelector('#success-kpi');
-// function successKpi() {
-//     successKPI.style.display="block";
-//     setTimeout(function() {
-//         successKPI.style.display = "none";
-//     }, 2000);
-// } 
+function removeTaskFromSame(event) {
+    if (sameContainer.childElementCount > 1) {
+        const itemToRemove = event.target.closest(".same-task-item");
+        sameContainer.removeChild(itemToRemove);
+    }
+}
+
+addSameBtn.addEventListener("click", addTaskToSame);
+
+// Level task
+const levelContainer = document.getElementById("level-task-list");
+const addLevelBtn = document.getElementById("add-task-in-level");
+
+function addTaskToLevel() {
+    const optionTemplate = document.querySelector(".level-task-item");
+    const optionClone = optionTemplate.cloneNode(true);
+    levelContainer.appendChild(optionClone);
+
+    const removeBtn = optionClone.querySelector('.remove-task-in-level-btn');
+    removeBtn.addEventListener("click", removeTaskFromLevel);
+}
+
+function removeTaskFromLevel(event) {
+    if (levelContainer.childElementCount > 1) {
+        const itemToRemove = event.target.closest(".level-task-item");
+        levelContainer.removeChild(itemToRemove);
+    }
+}
+
+addLevelBtn.addEventListener("click", addTaskToLevel);
+
 
 // Lấy tham chiếu đến form và thông báo
 const myForm = document.getElementById("new-kpi-content");
@@ -186,10 +234,5 @@ myForm.addEventListener("submit", function(event) {
         window.location.href = "/src/view/makekpi.html"; 
     }, 2000);
 });
-
-
-
-
-
 
 

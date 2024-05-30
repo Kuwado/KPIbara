@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="stylesheet" href="/src/css/makekpi.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 </head>
 
@@ -94,16 +93,16 @@
     <main id="content">
         <div id="left-content">
             <div id="option-kpi">
-                <h2>Hãy tạo KPI theo cách của bạn</h2>
-                <button onclick="newKpi()" class="medium-btn border-btn black-btn active" id="new-kpi-btn">Tạo mới</button>
-                <button onclick="exampleKpi()" class="medium-btn border-btn black-btn" id="example-kpi-btn">Theo mẫu</button>
-                <label class="medium-btn border-btn black-btn" for="upload-kpi-btn" id="upload-kpi-label">Tải tệp lên</label>
+                <h4>Hãy tạo KPI theo cách của bạn</h4>
+                <button onclick="newKpi()" class="medium-btn border-btn pink-btn active" id="new-kpi-btn">Tạo mới</button>
+                <button onclick="exampleKpi()" class="medium-btn border-btn pink-btn" id="example-kpi-btn">Theo mẫu</button>
+                <label class="medium-btn border-btn pink-btn" for="upload-kpi-btn" id="upload-kpi-label">Tải tệp lên</label>
                 <input onclick="uploadKpi()" type="file" id="upload-kpi-btn" hidden>
             </div>
         </div>
 
         <div id="right-content">
-            <form id="new-kpi-content" class="kpi-content active">
+            <form id="new-kpi-content" class="kpi-content">
                 <h2>Tạo mới</h2>
                 <div class="form-item">
                     <div class="col-6">
@@ -223,7 +222,7 @@
                                     <input type="time" name="kpi-start-time" class="kpi-start-time">
                                     <label for="kpi-end-time">Kết thúc: </label>
                                     <input type="time" name="kpi-end-time" class="kpi-end-time">
-                                    <button type="button" class="icon-btn remove-day-in-week-btn" onclick="removeDayFromWeek()"><i class="fa-solid fa-minus"></i></button>
+                                    <button type="button" class="icon-btn remove-day-in-week-btn" onclick="removeDayFromWeek(event)"><i class="fa-solid fa-minus"></i></button>
                                 </div>
                             </div>
                             <div class="add-more">
@@ -286,7 +285,134 @@
                 </div>
 
                 <div id="task-kpi">
+                    <div class="form-item" id="task-kpi-detail">
+                        <div id="task-kpi-type">
+                            <label for="task-kpi-type-option">Loại trọng số: </label>
+                            <select name="kpi-type-option" id="task-kpi-type-option" onchange="taskWeight()">
+                                <option class="select-placeholder" value="placeholder" disabled selected hidden>Trọng số nhiệm vụ</option>
+                                <option value="same">Như nhau</option>
+                                <option value="level">Phân mức</option>
+                            </select>
+                        </div>
+                    </div>
 
+                    <div id="same-task">
+                        <div class="form-item" id="same-task-list">
+                            <div class="same-task-item">
+                                <div class="same-task-left">
+                                    <div>
+                                        <label for="task-name">Tên nhiệm vụ: </label>
+                                        <input type="text" name="task-name" id="task-name">
+                                    </div>
+    
+                                    <div class="same-task-first">
+                                        <div>
+                                            <label for="kpi-start-datetime">Thời gian bắt đầu: </label>
+                                            <input type="datetime-local" name="kpi-start-datetime" id="kpi-start-datetime">
+                                        </div>
+                                        <div>
+                                            <label for="kpi-end-datetime">Thời gian kết thúc: </label>
+                                            <input type="datetime-local" name="kpi-end-datetime" id="kpi-end-datetime">
+                                        </div>
+                                    </div>
+        
+                                    <div class="same-task-second">
+                                        <div>
+                                            <label for="same-task-number" >Mục tiêu: </label>
+                                            <input type="number" id="same-task-number">
+                                        </div>
+                                        <select name="same-task-type" id="same-task-type">
+                                            <option class="select-placeholder" value="placeholder" disabled selected hidden>Đơn vị</option>
+                                            <option value="hour">Giờ</option>
+                                            <option value="day">Ngày</option>
+                                            <option value="week">Tuần</option>
+                                            <option value="point">Điểm</option>
+                                            <option value="km">Km</option>
+                                            <option value="other">Khác</option>
+                                        </select>
+                                    </div>
+                                </div>
+    
+                                <div class="same-task-right">
+                                    <button type="button" class="icon-btn remove-task-in-same-btn" onclick="removeTaskFromSame(event)"><i class="fa-solid fa-minus"></i></button>
+                                </div>
+    
+    
+                                <div class="form-item" id="kpi-target">
+      
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="add-more">
+                            <button type="button" class="icon-btn" id="add-task-in-same"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div id="level-task">
+                        <div class="form-item" id="level-task-list">
+                            <div class="level-task-item">
+                                <div class="same-task-left">
+                                    <div class="level-name-task">
+                                        <label for="task-name">Tên nhiệm vụ: </label>
+                                        <input type="text" name="task-name" id="task-name">
+
+                                        <select name="level-task-type" id="level-task-type">
+                                            <option class="select-placeholder" value="placeholder" disabled selected hidden>Trọng số</option>
+                                            <option value="0">0 - Không quan trọng</option>
+                                            <option value="1">1 - Ít quan trọng</option>
+                                            <option value="2">2 - Khá quan trọng</option>
+                                            <option value="3">3 - Quan trọng</option>
+                                            <option value="4">4 - Rất quan trọng</option>
+                                            <option value="5">5 - Cực kỳ quan trọng</option>
+                                            <option value="other">Khác</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="same-task-first">
+                                        <div>
+                                            <label for="kpi-start-datetime">Thời gian bắt đầu: </label>
+                                            <input type="datetime-local" name="kpi-start-datetime" id="kpi-start-datetime">
+                                        </div>
+                                        <div>
+                                            <label for="kpi-end-datetime">Thời gian kết thúc: </label>
+                                            <input type="datetime-local" name="kpi-end-datetime" id="kpi-end-datetime">
+                                        </div>
+                                    </div>
+        
+                                    <div class="same-task-second">
+                                        <div>
+                                            <label for="same-task-number" >Mục tiêu: </label>
+                                            <input type="number" id="same-task-number">
+                                        </div>
+                                        <select name="same-task-type" id="same-task-type">
+                                            <option class="select-placeholder" value="placeholder" disabled selected hidden>Đơn vị</option>
+                                            <option value="hour">Giờ</option>
+                                            <option value="day">Ngày</option>
+                                            <option value="week">Tuần</option>
+                                            <option value="point">Điểm</option>
+                                            <option value="km">Km</option>
+                                            <option value="other">Khác</option>
+                                        </select>
+                                    </div>
+                                </div>
+    
+                                <div class="same-task-right">
+                                    <button type="button" class="icon-btn remove-task-in-level-btn" onclick="removeTaskFromLevel(event)"><i class="fa-solid fa-minus"></i></button>
+                                </div>
+    
+    
+                                <div class="form-item" id="kpi-target">
+      
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-more">
+                            <button type="button" class="icon-btn" id="add-task-in-level"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
                 </div>
 
                 <div id="submit-box">
@@ -294,8 +420,24 @@
                 </div>
             </form>
 
-            <form id="example-kpi-content" class="kpi-content">
+            <form id="example-kpi-content" class="kpi-content active">
+                <div id="example-left-content">
+                    <span>Mẫu dùng thử</span>
+                    <div class="example-list">
+                        <div class="example">
+                            <span>IT</span>
+                            <span>Phương thức: Theo nhiệm vụ</span>
+                            <span>Trọng số: Phân mức</span>
+                        </div>
+                    </div>
 
+                </div>
+                <div id="example-right-content">
+                    <span>Mẫu tạo gần đây</span>
+                    <div class="example-list">
+                        
+                    </div>
+                </div>
             </form>
 
             <form id="upload-kpi-content" class="kpi-content">
@@ -323,13 +465,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/src/js/main.js"></script>
     <script src="/src/js/makekpi.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-    flatpickr("#datepicker", {
-        dateFormat: "d-m-Y", // Định dạng ngày tháng
-        locale: "vi", // Sử dụng ngôn ngữ tiếng Việt
-    });
-    </script>
 
     <!------------------------------------------------------End Script----------------------------------------->
 
