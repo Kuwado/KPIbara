@@ -1,0 +1,77 @@
+.landing-header {
+    padding: 0 100px 0 200px;
+}
+ *{
+    font-family: 'Roboto';
+ }
+.login-signup-button button:first-child{
+    border: none;
+    background-color: #ffffff;
+    margin-right: 15px;
+    color: #ea4c89;
+}
+
+.login-signup-button button:first-child:hover{
+    text-decoration: underline;
+    color: #382e2e;
+}
+
+.login-signup-button button:last-child{
+    border: 1px solid #ea4c89;
+    padding: 5px 10px 5px 10px;
+    border-radius: 100px 100px 100px 100px;
+    background-color: #ea4c89;
+    margin-right: 15px;
+    color: #ffffff;
+}
+
+.login-signup-button button:last-child:hover{
+    border: 3px solid #382e2e;
+    background-color: #ffffff;
+    color: #382e2e;
+}
+/* -------------------content---------------------------- */
+.landing-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ld-content {
+    background-image: 
+        linear-gradient(69deg, rgba(234,76,137,0.69) 55%, rgba(94,78,201,1)), 
+        url("/src/images/capybara.jpg");
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    padding-top: 189px;
+    height: 620px;
+}
+
+
+
+.landing-content-right {
+    color: white; /* Thêm màu văn bản để dễ đọc trên nền */
+}
+
+.landing-content-text {
+    margin-left: 100px;
+}
+
+.landing-content-right-title {
+    font-size: 50px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.zo button {
+    background-color: transparent;
+    margin-left: 100px;
+    margin-top: 69px;
+    border: none;
+    text-decoration: underline;
+    color: white;
+}
+
+.zo button:hover {
+    transform: scale(1.1);
+}
