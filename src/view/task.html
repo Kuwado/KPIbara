@@ -7,29 +7,169 @@
     <title>KPIbara</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!"
-    />
-    <meta
-      name="keywords"
-      content="calendar, events, reminders, javascript, html, css, open source coding"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/src/css/task.css" />
+
     <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/task.css">
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarOptions = {
+            initialDate: '2023-01-12',
+            initialView: 'timeGridWeek',
+            nowIndicator: true,
+            headerToolbar: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            },
+            navLinks: true, // can click day/week names to navigate views
+            editable: true,
+            selectable: true,
+            selectMirror: true,
+            dayMaxEvents: true, // allow "more" link when too many events
+            events: [
+              {
+                title: 'All Day Event',
+                start: '2023-01-01',
+              },
+              {
+                title: 'Long Event',
+                start: '2023-01-07',
+                end: '2023-01-10'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2023-01-09T16:00:00'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2023-01-16T16:00:00'
+              },
+              {
+                title: 'Conference',
+                start: '2023-01-11',
+                end: '2023-01-13'
+              },
+              {
+                title: 'Meeting',
+                start: '2023-01-12T10:30:00',
+                end: '2023-01-12T12:30:00'
+              },
+              {
+                title: 'Lunch',
+                start: '2023-01-12T12:00:00'
+              },
+              {
+                title: 'Meeting',
+                start: '2023-01-12T14:30:00'
+              },
+              {
+                title: 'Happy Hour',
+                start: '2023-01-12T17:30:00'
+              },
+              {
+                title: 'Dinner',
+                start: '2023-01-12T20:00:00'
+              },
+              {
+                title: 'Birthday Party',
+                start: '2023-01-13T07:00:00'
+              },
+              {
+                title: 'Click for Google',
+                url: 'http://google.com/',
+                start: '2023-01-28'
+              }
+            ]
+          };
+      
+          var calendar = new FullCalendar.Calendar(document.getElementById('calendar'), calendarOptions);
+          calendar.render();
+      
+          var calendar2 = new FullCalendar.Calendar(document.getElementById('calendar2'), calendarOptions);
+          calendar2.render();
+      
+          /*
+          Modal
+          */
+      
+          var modal = document.querySelector('.modal');
+          var modalTrigger = document.querySelector('.modal-trigger');
+          var modalOverlay = document.querySelector('.modal-overlay');
+      
+          modalTrigger.addEventListener('click', function() {
+            modal.classList.add('is-visible');
+            calendar2.updateSize();
+          });
+          modalOverlay.addEventListener('click', function() {
+            modal.classList.remove('is-visible');
+          });
+        });
+      
+    </script>
+    <style>
+
+        main {
+          padding: 0;
+          font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+          font-size: 14px;
+        }
+      
+        #calendar {
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+      
+        .modal {
+          display: none;
+          position: absolute;
+          z-index: 10000;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .modal-trigger{
+            margin-top: 100px;
+        }
+      
+        .modal.is-visible {
+          display: block;
+        }
+      
+        .modal-overlay {
+          position: fixed;
+          z-index: 10;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: hsla(0, 0%, 0%, 0.5);
+        }
+      
+        .modal-wrapper {
+          position: absolute;
+          z-index: 9999;
+          top: 6em;
+          left: 50%;
+          width: 600px;
+          margin-left: -16em;
+          background-color: #fff;
+          box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35);
+        }
+      
+        .modal-content {
+          padding: 1em;
+        }
+      
+    </style>
 
 </head>
 
@@ -48,16 +188,22 @@
                 <img src="/src/images/logo.png">
             </div>
             <div id="menu">
-                <a href="/src/view/home.html" class="menu-item active"><i class="fa-solid fa-house"></i><span>Trang chủ</span></a>
-                <div class="position-relative">                
-                    <a href="/src/view/viewkpi.html" class="menu-item" id="kpi"><i class="fa-solid fa-chart-simple"></i><span>KPI</span></a>
+                <a href="/src/view/home.html" class="menu-item active"><i class="fa-solid fa-house"></i><span>Trang
+                        chủ</span></a>
+                <div class="position-relative">
+                    <a href="/src/view/viewkpi.html" class="menu-item" id="kpi"><i
+                            class="fa-solid fa-chart-simple"></i><span>KPI</span></a>
                     <ul class="kpi-list">
-                        <li><a href="/src/view/viewkpi.html"><i class="fa-solid fa-clipboard-list"></i><span>Danh sách KPI</span></a></li>
-                        <li><a href="/src/view/makekpi.html"><i class="fa-solid fa-plus"></i><span>Thiết lập KPI</span></a></li>
+                        <li><a href="/src/view/viewkpi.html"><i class="fa-solid fa-clipboard-list"></i><span>Danh sách
+                                    KPI</span></a></li>
+                        <li><a href="/src/view/makekpi.html"><i class="fa-solid fa-plus"></i><span>Thiết lập
+                                    KPI</span></a></li>
                     </ul>
                 </div>
-                <a href="/src/view/task.html" class="menu-item"><i class="fa-solid fa-list-check"></i><span>Công việc</span></a>
-                <a href="/src/view/achivement.html" class="menu-item"><i class="fa-solid fa-trophy"></i><span>Thành tựu</span></a>
+                <a href="/src/view/task.html" class="menu-item"><i class="fa-solid fa-list-check"></i><span>Công
+                        việc</span></a>
+                <a href="/src/view/achivement.html" class="menu-item"><i class="fa-solid fa-trophy"></i><span>Thành
+                        tựu</span></a>
             </div>
         </div>
 
@@ -70,26 +216,42 @@
                 </button>
                 <div id="notice">
                     <div id="notice-list">
-                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy bộ"</span></a>
-                        <a href="#"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn thành xong kpi "Haha"</span></a>
-                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học UxUi"</span></a>
-                        <a href="#" class="active"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy bộ"</span></a>
-                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn thành xong kpi "Haha"</span></a>
-                        <a href="#" class="active"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học UxUi"</span></a>
-                        <a href="#" class="active"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy bộ"</span></a>
-                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn thành xong kpi "Haha"</span></a>
-                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học UxUi"</span></a>
-                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy bộ"</span></a>
-                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn thành xong kpi "Haha"</span></a>
-                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học UxUi"</span></a>
-                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy bộ"</span></a>
-                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn thành xong kpi "Haha"</span></a>
-                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học UxUi"</span></a>
+                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy
+                                bộ"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn thành xong kpi
+                                "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực
+                                hiện "Chạy bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực
+                                hiện "Học UxUi"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực
+                                hiện "Chạy bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
+                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy
+                                bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
+                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy
+                                bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
                     </div>
                 </div>
             </div>
 
-            <button class="right-item position-relative" id="avatar" onclick="showAvatarMenu()"><img id="avatar-img" src="/src/images/avatar.jpg"></button>
+            <button class="right-item position-relative" id="avatar" onclick="showAvatarMenu()"><img id="avatar-img"
+                    src="/src/images/avatar.jpg"></button>
             <ul id="avatar-menu">
                 <li class="avatar-menu-item" id="preview-profile">
                     <img src="/src/images/avatar.jpg">
@@ -98,10 +260,14 @@
                         <span>viethoan557723@gmail.com</span>
                     </div>
                 </li>
-                <li class="avatar-menu-item"><a href="/src/view/profile.html"><i class="fa-solid fa-user"></i><span>Thông tin cá nhân</span></a></li>
-                <li class="avatar-menu-item"><a href="/src/view/setting.html"><i class="fa-solid fa-gear"></i><span>Cài đặt</span></a></li>
-                <li class="avatar-menu-item"><a href="/src/view/feedback.html"><i class="fa-solid fa-message"></i><span>Góp ý nhà phát triển</span></a></li>
-                <li class="avatar-menu-item"><a href="/src/view/login.html"><i class="fa-solid fa-right-from-bracket"></i><span>Đăng xuất</span></a></li>
+                <li class="avatar-menu-item"><a href="/src/view/profile.html"><i
+                            class="fa-solid fa-user"></i><span>Thông tin cá nhân</span></a></li>
+                <li class="avatar-menu-item"><a href="/src/view/setting.html"><i class="fa-solid fa-gear"></i><span>Cài
+                            đặt</span></a></li>
+                <li class="avatar-menu-item"><a href="/src/view/feedback.html"><i
+                            class="fa-solid fa-message"></i><span>Góp ý nhà phát triển</span></a></li>
+                <li class="avatar-menu-item"><a href="/src/view/login.html"><i
+                            class="fa-solid fa-right-from-bracket"></i><span>Đăng xuất</span></a></li>
             </ul>
         </div>
     </header>
@@ -110,73 +276,18 @@
     <!-------------------------------------------------Start main---------------------------------------------->
     <main>
 
-        <div class="container">
-            <div class="left">
-              <div class="calendar">
-                <div class="month">
-                  <i class="fas fa-angle-left prev"></i>
-                  <div class="date">december 2015</div>
-                  <i class="fas fa-angle-right next"></i>
-                </div>
-                <div class="weekdays">
-                  <div>Sun</div>
-                  <div>Mon</div>
-                  <div>Tue</div>
-                  <div>Wed</div>
-                  <div>Thu</div>
-                  <div>Fri</div>
-                  <div>Sat</div>
-                </div>
-                <div class="days"></div>
-                <div class="goto-today">
-                  <div class="goto">
-                    <input type="text" placeholder="mm/yyyy" class="date-input" />
-                    <button class="goto-btn">Go</button>
-                  </div>
-                  <button class="today-btn">Today</button>
-                </div>
-              </div>
+        <button class='modal-trigger'>Show modal</button>
+
+        <div id='calendar'></div>
+
+        <div class='modal'>
+            <div class='modal-overlay'></div>
+            <div class='modal-wrapper'>
+            <div class='modal-content'>
+                <div id='calendar2'></div>
             </div>
-            <div class="right">
-              <div class="today-date">
-                <div class="event-day">wed</div>
-                <div class="event-date">12th december 2022</div>
-              </div>
-              <div class="events"></div>
-              <div class="add-event-wrapper">
-                <div class="add-event-header">
-                  <div class="title">Add Event</div>
-                  <i class="fas fa-times close"></i>
-                </div>
-                <div class="add-event-body">
-                  <div class="add-event-input">
-                    <input type="text" placeholder="Event Name" class="event-name" />
-                  </div>
-                  <div class="add-event-input">
-                    <input
-                      type="text"
-                      placeholder="Event Time From"
-                      class="event-time-from"
-                    />
-                  </div>
-                  <div class="add-event-input">
-                    <input
-                      type="text"
-                      placeholder="Event Time To"
-                      class="event-time-to"
-                    />
-                  </div>
-                </div>
-                <div class="add-event-footer">
-                  <button class="add-event-btn">Add Event</button>
-                </div>
-              </div>
             </div>
-            <button class="add-event">
-              <i class="fas fa-plus"></i>
-            </button>
-          </div>
-      
+        </div>
 
     </main>
     <!--------------------------------------------------End main----------------------------------------------->
