@@ -103,8 +103,48 @@
                 <canvas id="kpi-chart"></canvas>
             </div>
             <div class="chart2">
+                <p>Tổng quan</p>
                 <canvas id="kpi-chart2"></canvas>
+                <p class="inline">còn 
+                <span>
+                    <div class="inline">
+                        <div class="counter" id="dem-pt">
+                            <p>0</p>
+                        </div>
+                        <span>%</span>
+                    </div>
+                </span> sẽ hoàn thành tất cả các kpi</p>
             </div>
+        </div>
+        <div class="achivement inline">
+            <div class="number-of-day">
+                <div class="inline">
+                    <div class="counter" id="daysUsed">
+                        <p>0</p>
+                    </div>
+                    <span>ngày</span>
+                </div>
+                <p>sử dụng KPiBara</p>
+            </div>
+            <div class="number-of-kpi">
+                <div class="inline">
+                    <div class="counter" id="kpiCompleted">
+                        <p>0</p>
+                    </div>
+                    <span>KPI</span>
+                </div>
+                <p>đã hoàn thành</p>
+            </div>
+            <div class="rate-done">
+                <div class="inline">
+                    <div class="counter" id="kpiCompletedRate">
+                        <p>0</p>
+                    </div>
+                    <span>%</span>
+                </div>
+                <p>tỉ lệ hoàn thành nhiệm vụ</p>
+            </div>
+
         </div>
     </main>
     <!--------------------------------------------------End main----------------------------------------------->
@@ -121,6 +161,7 @@
     <script src="https://kit.fontawesome.com/78f639c5ca.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/src/js/main.js"></script>
     <script>
         // Giả sử mảng kpiData chứa dữ liệu cho các KPI
         var kpiData = [
@@ -249,6 +290,35 @@
         }
 
         animate(); // Bắt đầu hoạt hình
+
+        function animateValue(id, start, end, duration) {
+        let obj = document.getElementById(id);
+        let range = end - start;
+        let minTimer = 50;
+        let stepTime = Math.abs(Math.floor(duration / range));
+        stepTime = Math.max(stepTime, minTimer);
+        let startTime = new Date().getTime();
+        let endTime = startTime + duration;
+        let timer;
+
+        function run() {
+            let now = new Date().getTime();
+            let remaining = Math.max((endTime - now) / duration, 0);
+            let value = Math.round(end - (remaining * range));
+            obj.innerHTML = value;
+            if (value == end) {
+            clearInterval(timer);
+            }
+        }
+
+        timer = setInterval(run, stepTime);
+        run();
+        }
+
+        animateValue("daysUsed", 0, 365, 2000); // Thay đổi 365 bằng số ngày thực tế
+        animateValue("kpiCompleted", 0, 189, 2000); // Thay đổi 20 bằng số KPI thực tế
+        animateValue("kpiCompletedRate", 0, 95, 2000); 
+        animateValue("dem-pt", 0, 25, 2000); 
 
 
     </script>
