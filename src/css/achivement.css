@@ -51,8 +51,65 @@ main{
     text-align: center;
     width: 40%;
 }
+
+.chart2 p:first-child {
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
 #kpi-chart2 {
     height: 300px;
 }
 
+
+
+
+
+/* --------------------------- */
+
+.achievement {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .number-of-day, .number-of-kpi, .rate-done {
+    flex-basis: 33%;
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .number-of-kpi {
+    border-left: 2px dashed #000;
+    border-right: 2px dashed #000;
+  }
+  
+
+  /* Additional styling to ensure proper spacing and alignment */
+  .inline {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+  
+  .counter {
+    margin-right: 5px; /* Adjust as needed */
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .counter p {
+    margin: 0; /* Remove default margins from paragraphs */
+  }
+  
+  .inline span {
+    color: #EA4C89;
+  }
+
+  .number-of-day p, .number-of-kpi p, .rate-done p {
+    margin-top: 15px;
+    font-size: 27px;
+    font-weight: bold;
+  }
 
