@@ -30,7 +30,7 @@
 #option-kpi button, 
 #option-kpi label {
     margin: 10px 0;
-    width: 60%;
+    width: 70%;
 }
 
 #upload-kpi-label {
@@ -239,6 +239,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .example-type {
@@ -351,8 +352,33 @@
 
 
 @media screen and (max-width: 430px) {
+    #content {
+        flex-direction: column;
+    }
+
     #left-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #left-content h4{
         display: none;
+    }
+
+    #option-kpi {
+        flex-direction: row;
+        width: 100%;
+        padding: 30px 5px;
+    }
+
+    #option-kpi .medium-btn {
+        font-size: 16px;
+    }
+
+
+    #option-kpi button, 
+    #option-kpi label {
+        width: 33%;
     }
 
     #right-content {

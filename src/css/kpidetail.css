@@ -9,7 +9,6 @@
 
 #kpi-detail-left,
 #kpi-detail-right {
-    width: 50%;
     background-color: transparent;
     display: flex;
     flex-direction: column;
@@ -18,9 +17,14 @@
     padding: 10px;
 }
 
+#kpi-detail-right {
+    width: 40%;
+}
+
 #kpi-detail-left {
     border-right: 3px solid rgba(234, 76, 137, 0.5);
     justify-content: center;
+    width: 60%;
 }
 
 #kpi-des {
@@ -43,8 +47,8 @@
     color: white;
     font-weight: 700;
     padding: 5px 10px;
-    top: -60%;
-    right: 5%;
+    top: -40%;
+    right: 10%;
 }
 
 #history h5 {
