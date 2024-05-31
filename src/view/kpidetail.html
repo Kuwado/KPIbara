@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPIbara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/kpidetail.css">
+    <link rel="stylesheet" href="/src/css/makekpi.css">
+    <link rel="stylesheet" href="/src/css/viewkpi.css">
+
+</head>
+
+<body>
+    <!----------------------------------------------Start header---------------------------------------------->
+    <header class="container-fluid header">
+        <div id="sidebar">
+            <a href="/src/view/home.html" class="sidebar-item active"><i class="fa-solid fa-house"></i></a>
+            <a href="/src/view/viewkpi.html" class="sidebar-item" id="kpi"><i class="fa-solid fa-chart-simple"></i></a>
+            <a href="/src/view/task.html" class="sidebar-item"><i class="fa-solid fa-list-check"></i></a>
+            <a href="/src/view/achivement.html" class="sidebar-item"><i class="fa-solid fa-trophy"></i></a>
+        </div>
+
+        <div id="left-header">
+            <div id="logo">
+                <img src="/src/images/logo.png">
+            </div>
+            <div id="menu">
+                <a href="/src/view/home.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Trang
+                        chủ</span></a>
+                <div class="position-relative">
+                    <a href="/src/view/viewkpi.html" class="menu-item active" id="kpi"><i
+                            class="fa-solid fa-chart-simple"></i><span>KPI</span></a>
+                    <ul class="kpi-list">
+                        <li><a href="/src/view/viewkpi.html"><i class="fa-solid fa-clipboard-list"></i><span>Danh sách
+                                    KPI</span></a></li>
+                        <li><a href="/src/view/makekpi.html"><i class="fa-solid fa-plus"></i><span>Thiết lập
+                                    KPI</span></a></li>
+                    </ul>
+                </div>
+                <a href="/src/view/task.html" class="menu-item"><i class="fa-solid fa-list-check"></i><span>Công
+                        việc</span></a>
+                <a href="/src/view/achivement.html" class="menu-item"><i class="fa-solid fa-trophy"></i><span>Thành
+                        tựu</span></a>
+            </div>
+        </div>
+
+        <div id="right-header">
+            <button class="right-item btn right-icon"><i class="fa-solid fa-circle-question"></i></button>
+            <div class="position-relative right-icon">
+                <button class="right-item btn position-relative notice-btn" onclick="showNotice()">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="position-absolute translate-middle badge bg-primary" id="notice-number">12</span>
+                </button>
+                <div id="notice">
+                    <div id="notice-list">
+                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy
+                                bộ"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn thành xong kpi
+                                "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực
+                                hiện "Chạy bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực
+                                hiện "Học UxUi"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực
+                                hiện "Chạy bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
+                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy
+                                bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
+                        <a href="#"><i class="fa-solid fa-clock"></i><span>Còn 5 phút nữa tới giờ thực hiện "Chạy
+                                bộ"</span></a>
+                        <a href="#" class="active"><i class="fa-solid fa-circle-check"></i><span>Chúc mừng bạn đã hoàn
+                                thành xong kpi "Haha"</span></a>
+                        <a href="#"><i class="fa-solid fa-circle-exclamation"></i><span>Bạn đã không thực hiện "Học
+                                UxUi"</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="right-item position-relative" id="avatar" onclick="showAvatarMenu()"><img id="avatar-img"
+                    src="/src/images/avatar.jpg"></button>
+            <ul id="avatar-menu">
+                <li class="avatar-menu-item" id="preview-profile">
+                    <img src="/src/images/avatar.jpg">
+                    <div id="preview-infor">
+                        <span>Lưu Việt Hoàn</span>
+                        <span>viethoan557723@gmail.com</span>
+                    </div>
+                </li>
+                <li class="avatar-menu-item"><a href="/src/view/profile.html"><i
+                            class="fa-solid fa-user"></i><span>Thông tin cá nhân</span></a></li>
+                <li class="avatar-menu-item"><a href="/src/view/setting.html"><i class="fa-solid fa-gear"></i><span>Cài
+                            đặt</span></a></li>
+                <li class="avatar-menu-item"><a href="/src/view/feedback.html"><i
+                            class="fa-solid fa-message"></i><span>Góp ý nhà phát triển</span></a></li>
+                <li class="avatar-menu-item"><a href="/src/view/login.html"><i
+                            class="fa-solid fa-right-from-bracket"></i><span>Đăng xuất</span></a></li>
+            </ul>
+        </div>
+    </header>
+    <!---------------------------------------------End Header------------------------------------------------->
+
+    <!-------------------------------------------------Start main---------------------------------------------->
+    <main id="content">
+        <div id="kpi-detail">
+            <div id="kpi-detail-left">
+                <div id="name">
+                    <h4>30 giờ học tiếng Nhật</h4>
+                    <span>Nghiên cứu</span>
+                </div>
+
+                <div class="form-item">
+                    <label for="kpi-des">Mô tả: </label>
+                    <textarea placeholder="  Mô tả về KPI" name="kpi-des"
+                        id="kpi-des">Học tiếng Nhật vui lắm, thề!!!</textarea>
+                </div>
+
+                <div id="unit-kpi" class="active">
+                    <div class="form-item" id="unit-kpi-detail">
+                        <div id="kpi-type" class="col-6">
+                            <label for="kpi-type-option">Loại: </label>
+                            <select name="kpi-type-option" id="kpi-type-option" onchange="loop()">
+                                <option class="select-placeholder" value="placeholder" disabled hidden>Chọn loại KPI
+                                </option>
+                                <option value="one-time">Một lần</option>
+                                <option value="loop" selected>Lặp lại</option>
+                            </select>
+                        </div>
+                        <div id="loop" class="col-6">
+                            <label for="kpi-loop-type">Lặp: </label>
+                            <select name="kpi-loop-type" id="kpi-loop-type" onchange="loopDate()">
+                                <option class="select-placeholder" value="placeholder" disabled selected hidden>Phương
+                                    thức lặp</option>
+                                <option value="every-day" selected>Hàng ngày</option>
+                                <option value="every-week">Hàng tuần</option>
+                                <option value="every-month">Hàng tháng</option>
+                                <option value="choose-day">Lựa chọn ngày</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-item" id="kpi-target">
+                        <div>
+                            <label for="unit-number">Số lượng: </label>
+                            <input type="number" id="unit-number" value="30">
+                        </div>
+                        <select name="unit-type" id="unit-type">
+                            <option class="select-placeholder" value="placeholder" disabled hidden>Đơn vị</option>
+                            <option value="hour" selected>Giờ</option>
+                            <option value="day">Ngày</option>
+                            <option value="week">Tuần</option>
+                            <option value="point">Điểm</option>
+                            <option value="km">Km</option>
+                            <option value="other">Khác</option>
+                        </select>
+                        <select name="unit-solution" id="unit-solution">
+                            <option class="select-placeholder" value="placeholder" disabled selected hidden>Tính trên
+                            </option>
+                            <option value="each-time">Mỗi lần</option>
+                            <option value="day" selected>Cả quá trình</option>
+                        </select>
+                    </div>
+
+                    <div class="form-item" id="kpi-date">
+                        <div id="date-option">
+                            <div class="col-6">
+                                <label for="kpi-start-date">Ngày bắt đầu: </label>
+                                <input type="date" name="kpi-start-date" id="kpi-start-date" value="2024-05-05">
+                            </div>
+                            <div class="col-6">
+                                <label for="kpi-end-date">Ngày kết thúc: </label>
+                                <input type="date" name="kpi-end-date" id="kpi-end-date" value="2024-06-02">
+                            </div>
+                        </div>
+
+                        <div id="date-option">
+                            <div class="col-6">
+                                <label for="kpi-start-time">Thời gian bắt đầu: </label>
+                                <input type="time" name="kpi-start-time" id="kpi-start-time" value="20:00">
+                            </div>
+                            <div class="col-6">
+                                <label for="kpi-end-time">Thời gian kết thúc: </label>
+                                <input type="time" name="kpi-end-time" id="kpi-end-time" value="22:00">
+                            </div>
+                        </div>
+
+                        <div id="week-option">
+                            <div id="week-item-list">
+                                <div class="week-item">
+                                    <select name="week-choose-day" class="week-choose-day">
+                                        <option class="select-placeholder" value="placeholder" disabled selected hidden>
+                                            Chọn thứ</option>
+                                        <option value="2">Thứ 2</option>
+                                        <option value="3">Thứ 3</option>
+                                        <option value="4">Thứ 4</option>
+                                        <option value="5">Thứ 5</option>
+                                        <option value="6">Thứ 6</option>
+                                        <option value="7">Thứ 7</option>
+                                        <option value="cn">Chủ nhật</option>
+                                    </select>
+                                    <label for="kpi-start-time">Bắt đầu: </label>
+                                    <input type="time" name="kpi-start-time" class="kpi-start-time">
+                                    <label for="kpi-end-time">Kết thúc: </label>
+                                    <input type="time" name="kpi-end-time" class="kpi-end-time">
+                                    <button type="button" class="icon-btn remove-day-in-week-btn"
+                                        onclick="removeDayFromWeek(event)"><i class="fa-solid fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="add-more">
+                                <button type="button" class="icon-btn" id="add-more-day-in-week"><i
+                                        class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                        <div id="month-option">
+                            <div id="month-item-list">
+                                <div class="month-item">
+                                    <select name="month-choose-day" class="month-choose-day">
+                                        <option class="select-placeholder" value="placeholder" disabled selected hidden>
+                                            Chọn ngày</option>
+                                        <option value="1">Ngày 1</option>
+                                        <option value="2">Ngày 2</option>
+                                        <option value="3">Ngày 3</option>
+                                        <option value="4">Ngày 4</option>
+                                        <option value="5">Ngày 5</option>
+                                        <option value="6">Ngày 6</option>
+                                        <option value="7">Ngày 7</option>
+                                        <option value="8">Ngày 8</option>
+                                        <option value="9">Ngày 9</option>
+                                        <option value="10">Ngày 10</option>
+                                        <option value="11">Ngày 11</option>
+                                        <option value="12">Ngày 12</option>
+                                        <option value="13">Ngày 13</option>
+                                        <option value="14">Ngày 14</option>
+                                        <option value="15">Ngày 15</option>
+                                        <option value="16">Ngày 16</option>
+                                        <option value="17">Ngày 17</option>
+                                        <option value="18">Ngày 18</option>
+                                        <option value="19">Ngày 19</option>
+                                        <option value="20">Ngày 20</option>
+                                        <option value="21">Ngày 21</option>
+                                        <option value="22">Ngày 22</option>
+                                        <option value="23">Ngày 23</option>
+                                        <option value="24">Ngày 24</option>
+                                        <option value="25">Ngày 25</option>
+                                        <option value="26">Ngày 26</option>
+                                        <option value="27">Ngày 27</option>
+                                        <option value="28">Ngày 28</option>
+                                        <option value="29">Ngày 29</option>
+                                        <option value="30">Ngày 30</option>
+                                        <option value="31">Ngày 31</option>
+                                    </select>
+                                    <label for="kpi-start-time">Bắt đầu: </label>
+                                    <input type="time" name="kpi-start-time" class="kpi-start-time">
+                                    <label for="kpi-end-time">Kết thúc: </label>
+                                    <input type="time" name="kpi-end-time" class="kpi-end-time">
+                                    <button type="button" class="icon-btn"><i class="fa-solid fa-minus"
+                                            onclick="removeDayFromMonth(event)"></i></button>
+                                </div>
+                            </div>
+                            <div class="add-more">
+                                <button type="button" class="icon-btn" id="add-more-day-in-month"><i
+                                        class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div id="view-progress">
+                        <div class="kpi-progress">
+                            <div class="kpi-progress-bar kpi-all">
+                                <div class="kpi-progress-bar kpi-doing kpi-93"></div>
+                            </div>
+                        </div>
+                        <span>93.33%</span>
+                        <span>(28 / 30 giờ)</span>
+                    </div>
+
+                    <button class="medium-btn border-btn black-btn ms-3 mt-5" onclick="goBack()">Quay lại</button>
+
+                </div>
+
+                <div id="task-kpi">
+                    <div class="form-item" id="task-kpi-detail">
+                        <div id="task-kpi-type">
+                            <label for="task-kpi-type-option">Loại trọng số: </label>
+                            <select name="kpi-type-option" id="task-kpi-type-option" onchange="taskWeight()">
+                                <option class="select-placeholder" value="placeholder" disabled selected hidden>Trọng số
+                                    nhiệm vụ</option>
+                                <option value="same">Như nhau</option>
+                                <option value="level">Phân mức</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="same-task">
+                        <div class="form-item" id="same-task-list">
+                            <div class="same-task-item">
+                                <div class="same-task-left">
+                                    <div>
+                                        <label for="task-name">Tên nhiệm vụ: </label>
+                                        <input type="text" name="task-name" id="task-name">
+                                    </div>
+
+                                    <div class="same-task-first">
+                                        <div>
+                                            <label for="kpi-start-datetime">Thời gian bắt đầu: </label>
+                                            <input type="datetime-local" name="kpi-start-datetime"
+                                                id="kpi-start-datetime">
+                                        </div>
+                                        <div>
+                                            <label for="kpi-end-datetime">Thời gian kết thúc: </label>
+                                            <input type="datetime-local" name="kpi-end-datetime" id="kpi-end-datetime">
+                                        </div>
+                                    </div>
+
+                                    <div class="same-task-second">
+                                        <div>
+                                            <label for="same-task-number">Mục tiêu: </label>
+                                            <input type="number" id="same-task-number">
+                                        </div>
+                                        <select name="same-task-type" id="same-task-type">
+                                            <option class="select-placeholder" value="placeholder" disabled selected
+                                                hidden>Đơn vị</option>
+                                            <option value="hour">Giờ</option>
+                                            <option value="day">Ngày</option>
+                                            <option value="week">Tuần</option>
+                                            <option value="point">Điểm</option>
+                                            <option value="km">Km</option>
+                                            <option value="other">Khác</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="same-task-right">
+                                    <button type="button" class="icon-btn remove-task-in-same-btn"
+                                        onclick="removeTaskFromSame(event)"><i class="fa-solid fa-minus"></i></button>
+                                </div>
+
+
+                                <div class="form-item" id="kpi-target">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="add-more">
+                            <button type="button" class="icon-btn" id="add-task-in-same"><i
+                                    class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div id="level-task">
+                        <div class="form-item" id="level-task-list">
+                            <div class="level-task-item">
+                                <div class="same-task-left">
+                                    <div class="level-name-task">
+                                        <label for="task-name">Tên nhiệm vụ: </label>
+                                        <input type="text" name="task-name" id="task-name">
+
+                                        <select name="level-task-type" id="level-task-type">
+                                            <option class="select-placeholder" value="placeholder" disabled selected
+                                                hidden>Trọng số</option>
+                                            <option value="0">0 - Không quan trọng</option>
+                                            <option value="1">1 - Ít quan trọng</option>
+                                            <option value="2">2 - Khá quan trọng</option>
+                                            <option value="3">3 - Quan trọng</option>
+                                            <option value="4">4 - Rất quan trọng</option>
+                                            <option value="5">5 - Cực kỳ quan trọng</option>
+                                            <option value="other">Khác</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="same-task-first">
+                                        <div>
+                                            <label for="kpi-start-datetime">Thời gian bắt đầu: </label>
+                                            <input type="datetime-local" name="kpi-start-datetime"
+                                                id="kpi-start-datetime">
+                                        </div>
+                                        <div>
+                                            <label for="kpi-end-datetime">Thời gian kết thúc: </label>
+                                            <input type="datetime-local" name="kpi-end-datetime" id="kpi-end-datetime">
+                                        </div>
+                                    </div>
+
+                                    <div class="same-task-second">
+                                        <div>
+                                            <label for="same-task-number">Mục tiêu: </label>
+                                            <input type="number" id="same-task-number">
+                                        </div>
+                                        <select name="same-task-type" id="same-task-type">
+                                            <option class="select-placeholder" value="placeholder" disabled selected
+                                                hidden>Đơn vị</option>
+                                            <option value="hour">Giờ</option>
+                                            <option value="day">Ngày</option>
+                                            <option value="week">Tuần</option>
+                                            <option value="point">Điểm</option>
+                                            <option value="km">Km</option>
+                                            <option value="other">Khác</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="same-task-right">
+                                    <button type="button" class="icon-btn remove-task-in-level-btn"
+                                        onclick="removeTaskFromLevel(event)"><i class="fa-solid fa-minus"></i></button>
+                                </div>
+
+
+                                <div class="form-item" id="kpi-target">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-more">
+                            <button type="button" class="icon-btn" id="add-task-in-level"><i
+                                    class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div id="kpi-detail-right">
+                <div id="history">
+                    <h5>Lịch sử hoạt động</h5>
+                </div>
+                <div id="history-log">
+                    <div class="history-item">
+                        <span>29/05/2024</span>
+                        <span>1 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>27/05/2024</span>
+                        <span>1 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>24/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>23/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>22/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>20/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>19/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>17/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>15/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>13/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>11/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>09/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>08/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>06/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                    <div class="history-item">
+                        <span>05/05/2024</span>
+                        <span>2 giờ</span>
+                    </div>
+                </div>
+                <div id="add-box">
+                    <button type="button" class="medium-btn border-btn white-btn" data-bs-toggle="modal" data-bs-target="#today-input">Nhập hôm nay</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="today-input" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Popup</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="input-number-today">Nhập mức độ hoàn thành công việc hôm nay</label>
+                                <input type="number" id="input-number-today">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="medium-btn border-btn black-btn" data-bs-dismiss="modal">Quay lại</button>
+                              <button type="button" class="medium-btn border-btn white-btn" onclick="confirm()">Xác nhận</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!--------------------------------------------------End main----------------------------------------------->
+
+    <!-------------------------------------------------Start footer-------------------------------------------->
+    <footer>
+
+
+    </footer>
+    <!---------------------------------------------------End footer-------------------------------------------->
+
+    <!-----------------------------------------------------Start Script---------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/78f639c5ca.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/kpidetail.js"></script>
+
+    <!------------------------------------------------------End Script----------------------------------------->
+
+
+</body>
+
+
+
+
+
+</html>

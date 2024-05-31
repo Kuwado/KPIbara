@@ -239,51 +239,78 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    span {
-        font-size: 20px;
-        font-weight: 700;
-        color: #EA4C89;
-        margin: 10px 0;
-    }
 }
 
-.example-list {
+.example-type {
+    font-size: 20px;
+    font-weight: 700;
+    color: #EA4C89;
+    margin: 10px 0;
+}
+
+.example-container {
     border-radius: 50px 0 50px 0;
     border: 3px solid #EA4C89;
     width: 85%;
     height: 85%;
-    padding: 25px;
+    padding: 40px 5px 40px 25px;
+}
+
+.example-list {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.example-list::-webkit-scrollbar {
+    /* Tùy chỉnh thanh cuộn cho trình duyệt Chrome và Safari */
+    width: 5px;
+}
+
+.example-list::-webkit-scrollbar-thumb {
+    /* Tùy chỉnh phần thumb của thanh cuộn cho trình duyệt Chrome và Safari */
+    background-color: #EA4C89;
+    border-radius: 10px;
+}
+
+.example-list::-webkit-scrollbar-track {
+    /* Tùy chỉnh phần track của thanh cuộn cho trình duyệt Chrome và Safari */
+    background-color: transparent;
 }
 
 .example {
-    margin: 5px 15px;
+    margin: 0px 15px 15px 15px;
     border-radius: 25px 0 25px 0;
+    background-color: #F3E2DF;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
+.example span {
+    color: black !important;
+    margin: 5px 0 !important;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.example span:first-child {
+    margin-left: 20px;
+    border-radius: 10px 0 10px 0;
+    background-color: #EA4C89;
+    color: white !important;
+    padding: 0 10px;
+    width: max-content;
+}
 
 #upload-kpi-content {
-    background-color: green;
-    height: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    
 }
 
-
-
-
+#unit-kpi.active {
+    display: block;
+}
 
 /* notice */
 #success-kpi {

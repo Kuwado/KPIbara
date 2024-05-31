@@ -221,8 +221,20 @@ function removeTaskFromLevel(event) {
 addLevelBtn.addEventListener("click", addTaskToLevel);
 
 
+const examples = document.querySelectorAll(".example");
+
+examples.forEach(e => {
+    e.addEventListener("click", function() {
+        expContent.classList.remove("active");
+        ulContent.classList.add("active");
+        newContent.classList.remove("active");
+    })
+})
+
+
 // Lấy tham chiếu đến form và thông báo
 const myForm = document.getElementById("new-kpi-content");
+const myForm2 = document.getElementById("upload-kpi-content");
 const successKPI = document.getElementById("success-kpi");
 
 // Thêm sự kiện submit cho form
@@ -234,5 +246,15 @@ myForm.addEventListener("submit", function(event) {
         window.location.href = "/src/view/makekpi.html"; 
     }, 2000);
 });
+
+myForm2.addEventListener("submit", function(event) {
+    event.preventDefault();
+    successKPI.style.display = "flex";
+    setTimeout(function() {
+        successKPI.style.display = "none";
+        window.location.href = "/src/view/makekpi.html"; 
+    }, 2000);
+});
+
 
 
