@@ -118,7 +118,7 @@ main{
 .today-misson li {
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 20px 0 20px 0;
     background-color: #f2f2f2;
     color: #333;
     font-weight: bold;
@@ -143,6 +143,17 @@ main{
     font-size: 18px;
     color: #EA4C89; 
 }
+.view-detail-kpi-button {
+    background-color: #EA4C89;
+    color: white;
+    border: none; padding: 0 10px 0 10px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.view-detail-kpi-button:hover {
+    background-color: #FF7EB5;
+}
+
 .view-all-btn {
     background-color: #EA4C89;
     color: white;
@@ -262,6 +273,34 @@ main{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
+
+.overview-chart-container {
+    position: absolute;
+    display: none;
+    top: 100px; /* Cách đầu trang 100px */
+    right: 20px; /* Cách lề phải 20px */
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1; /* Đặt biểu đồ ở lớp trên */
+  }
+  .wrapper {
+    width: 70vw; /* Giảm kích thước xuống 70% chiều rộng viewport */
+    top: 100px;
+    /* Các quy tắc khác giữ nguyên */
+  }
+  
+  .sidebar-right {
+    width: 25vw; /* Giảm kích thước xuống 25% chiều rộng viewport */
+    /* Các quy tắc khác giữ nguyên */
+  }
+  .sidebar-right {
+    right: 20px; /* Cách lề phải 20px */
+    /* Các quy tắc khác giữ nguyên */
+  }
 
 @media only screen and (max-width: 430px) {
     .wrapper,
