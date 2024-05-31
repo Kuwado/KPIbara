@@ -9,7 +9,7 @@ main {
 
 .card {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -78,8 +78,8 @@ main {
 }
 
 .row .col-sm-9 {
-    flex: 0 0 70%;
-    max-width: 70%;
+    width: 100%;
+    
 }
 
 input.form-control {
@@ -121,7 +121,7 @@ h4 {
 
 .edit-profile-container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
     height: 960px;
     margin: 20px auto;
     padding: 20px;
