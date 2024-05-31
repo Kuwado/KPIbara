@@ -115,7 +115,7 @@ body {
     padding-bottom: 20px;
 }
 
-@media only screen and (max-width: 430px){
+@media screen and (max-width: 430px){
     .register-box {
         width: 70%;
         margin: auto 5% auto 5%;

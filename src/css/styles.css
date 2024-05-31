@@ -375,8 +375,12 @@ header {
         width: 50px;
     }
 
-    .right-icon {
+    .right-icon:first-child {
         display: none;
+    }
+
+    #notice {
+        width: 450%;
     }
 
     #sidebar {
