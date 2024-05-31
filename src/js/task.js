@@ -657,7 +657,7 @@ var FullCalendar = (function (exports) {
         return true;
     }
 
-    const DAY_IDS = ['cn', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    const DAY_IDS = ['CN', 'Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy'];
     // Adding
     function addWeeks(m, n) {
         let a = dateToUtcArray(m);
@@ -1518,7 +1518,7 @@ var FullCalendar = (function (exports) {
         timeZoneParam: 'timeZone',
         timeZone: 'local',
         locales: [],
-        locale: '',
+        locale: 'vi',
         themeSystem: 'standard',
         dragRevertDuration: 500,
         dragScroll: true,
@@ -7701,32 +7701,37 @@ var FullCalendar = (function (exports) {
     const globalLocales = [];
 
     const MINIMAL_RAW_EN_LOCALE = {
-        code: 'en',
+        code: 'vi',
         week: {
-            dow: 0,
-            doy: 4, // 4 days need to be within the year to be considered the first week
+            dow: 1, // Ngày đầu tiên của tuần là thứ Hai
+            doy: 4  // Tuần chứa ngày 4 của năm là tuần đầu tiên của năm
         },
         direction: 'ltr',
         buttonText: {
-            prev: 'prev',
-            next: 'next',
-            prevYear: 'prev year',
-            nextYear: 'next year',
-            year: 'year',
-            today: 'today',
-            month: 'month',
-            week: 'week',
-            day: 'day',
-            list: 'list',
+            prev: 'Trước',
+            next: 'Tiếp',
+            prevYear: 'Năm trước',
+            nextYear: 'Năm sau',
+            year: 'Năm',
+            today: 'Hôm nay',
+            month: 'Tháng',
+            week: 'Tuần',
+            day: 'Ngày',
+            list: 'Danh sách'
         },
-        weekText: 'W',
-        weekTextLong: 'Week',
-        closeHint: 'Close',
-        timeHint: 'Time',
-        eventHint: 'Event',
-        allDayText: 'all-day',
-        moreLinkText: 'more',
-        noEventsText: 'No events to display',
+        weekText: 'T',
+        weekTextLong: 'Tuần',
+        closeHint: 'Đóng',
+        timeHint: 'Thời gian',
+        eventHint: 'Sự kiện',
+        allDayText: 'Cả ngày',
+        moreLinkText: 'thêm',
+        noEventsText: 'Không có sự kiện nào để hiển thị',
+        weekdays: ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'],
+        weekdaysShort: ['CN', 'Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy'],
+        weekdaysMin: ['CN', 'H', 'B', 'T', 'N', 'S', 'B'],
+        monthNames: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+        monthNamesShort: ['Th1', 'Th2', 'Th3', 'Th4', 'Th5', 'Th6', 'Th7', 'Th8', 'Th9', 'Th10', 'Th11', 'Th12']
     };
     const RAW_EN_LOCALE = Object.assign(Object.assign({}, MINIMAL_RAW_EN_LOCALE), { 
         // Includes things we don't want other locales to inherit,

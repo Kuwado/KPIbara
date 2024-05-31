@@ -1,3 +1,44 @@
 body{
     background-color: white;
 }
+
+/* Kích thước chữ mặc định cho desktop */
+.fc-toolbar-title {
+    font-size: 1.5em; /* Hoặc bạn có thể sử dụng px, pt, % tùy thuộc vào nhu cầu */
+  }
+  
+  /* Kích thước chữ nhỏ hơn cho tablet */
+  @media (max-width: 768px) {
+    .fc-toolbar-title {
+      font-size: 1em !important; 
+    }
+
+    .fc-toolbar {
+        padding-top: 65px !important;
+    }
+
+    main button {
+        max-width: 40px;
+        max-height: 50px;
+        font-size: 10px !important;
+        text-align: center;
+    }
+    .fc-col-header-cell-cushion{
+        color: black;
+    }
+    .fc-scrollgrid {
+        height: 450px !important; /* Hoặc giá trị cụ thể nếu bạn muốn kích thước cố định */
+    }
+      
+    .modal-trigger {
+        display: none;
+      }
+  }
+  
+  /* Kích thước chữ nhỏ nhất cho điện thoại di động */
+  @media (max-width: 480px) {
+    .fc-toolbar-title {
+      font-size: 1em;
+    }
+  }
+  
