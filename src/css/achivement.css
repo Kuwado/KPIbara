@@ -120,7 +120,7 @@ main{
 
 
   /* Điều chỉnh giao diện cho màn hình nhỏ hơn 768px (điện thoại di động) */
-@media (max-width: 767px) {
+@media screen and (max-width: 430px) {
 
   /* Điều chỉnh main */
   main {
@@ -130,9 +130,9 @@ main{
   .chart1-header{
     padding-top: 0px;
   }
-#kpi-chart {
-  margin-right: 20px;
-}
+  #kpi-chart {
+    margin-right: 20px;
+  }
 
   .kpi-overview {
     flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */

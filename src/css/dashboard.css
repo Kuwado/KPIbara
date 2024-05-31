@@ -146,9 +146,10 @@ main{
 .view-detail-kpi-button {
     background-color: #EA4C89;
     color: white;
-    border: none; padding: 0 10px 0 10px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border: none;
+    padding: 5px 10px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .view-detail-kpi-button:hover {
     background-color: #FF7EB5;
