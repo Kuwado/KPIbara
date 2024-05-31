@@ -27,7 +27,7 @@
     text-align: center;
 }
 
-#option-kpi button, 
+#option-kpi button,
 #option-kpi label {
     margin: 10px 0;
     width: 70%;
@@ -45,6 +45,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+
     h2 {
         width: 100%;
         text-align: center;
@@ -55,7 +56,7 @@
     position: absolute;
     background-color: white;
     width: 90%;
-    left :5%;
+    left: 5%;
     padding: 20px;
     border-radius: 50px 0 50px 0;
     visibility: hidden;
@@ -120,13 +121,14 @@
     display: flex;
 }
 
-#week-option, #month-option {
+#week-option,
+#month-option {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-#week-item-list, 
+#week-item-list,
 #month-item-list,
 #same-task-list,
 #level-task-list {
@@ -135,7 +137,8 @@
     gap: 20px;
 }
 
-.week-item, .month-item {
+.week-item,
+.month-item {
     display: flex;
     gap: 20px;
 }
@@ -150,6 +153,7 @@
 .add-more button {
     height: 50px;
     width: 50px;
+
     i {
         font-size: 35px;
     }
@@ -162,7 +166,7 @@
     justify-content: center;
     margin-top: 20px;
 }
- 
+
 /* ---New--- */
 #new-kpi-content {
     display: flex;
@@ -170,7 +174,8 @@
     background-color: white;
 }
 
-#unit-kpi, #task-kpi {
+#unit-kpi,
+#task-kpi {
     display: none;
 }
 
@@ -179,12 +184,19 @@
     display: none;
 }
 
-#day-option, #week-option, #month-option {
+#day-option,
+#week-option,
+#month-option {
     display: none;
 }
 
+.week-item button, .month-item button {
+    margin-left: 10px;
+}
+
 /* --- same task --- */
-.same-task-item, .level-task-item {
+.same-task-item,
+.level-task-item {
     display: flex;
     align-items: center;
 }
@@ -196,13 +208,15 @@
     gap: 20px;
 }
 
-.same-task-first, .same-task-second {
+.same-task-first,
+.same-task-second {
     display: flex;
     gap: 20px;
     padding-left: 20px;
 }
 
-.same-task-first label, .same-task-second label{
+.same-task-first label,
+.same-task-second label {
     font-size: 18px;
 }
 
@@ -218,14 +232,15 @@
     gap: 20px;
 }
 
-#same-task, #level-task {
+#same-task,
+#level-task {
     display: none;
 }
 
 /* ---Example--- */
 #example-kpi-content {
     background-color: transparent;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: space-around;
 }
@@ -306,7 +321,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 #unit-kpi.active {
@@ -337,10 +352,12 @@
     align-items: center;
     justify-content: center;
     background-color: white;
+
     i {
         font-size: 40px;
         color: #EA4C89;
     }
+
     margin-right: 10px;
 }
 
@@ -353,16 +370,75 @@
 
 @media screen and (max-width: 430px) {
     #content {
+        display: flex;
         flex-direction: column;
     }
 
     #left-content {
+        position: relative;
         width: 100%;
         padding: 10px;
+        margin: 0;
+        margin-bottom: 10px;
     }
 
-    #left-content h4{
+    #right-content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .kpi-content,
+    .example-list {
+        width: 95%;
+        padding: 5px;
+    }
+
+    #submit-box {
+        margin-bottom: 60px;
+    }
+
+    .level-name-task {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #kpi-des {
+        width: 80%;
+    }
+
+    .same-task-first {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #kpi-target {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #unit-kpi-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #left-content h4 {
         display: none;
+    }
+
+    .month-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .week-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .form-item label {
+        font-size: 18px;
     }
 
     #option-kpi {
@@ -375,15 +451,41 @@
         font-size: 16px;
     }
 
-
-    #option-kpi button, 
+    #option-kpi button,
     #option-kpi label {
         width: 33%;
     }
 
-    #right-content {
-        width: 100%;
-        margin-left: 0;
+    #example-kpi-content {
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        padding: 5px;
+        margin: 0;
     }
 
+    #example-left-content {
+        width: 90%;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    #upload-kpi-content {
+        width: 90%;
+        padding: 10px 5px;
+        margin-right: 10px;
+    }
+
+    #success-kpi {
+        width: 90%;
+    }
+
+    #success-kpi div {
+        height: 50px !important;
+        width: 50px !important;
+    }
+
+    #success-kpi div i {
+        font-size: 30px !important;
+    }
 }

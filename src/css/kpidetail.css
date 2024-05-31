@@ -115,3 +115,21 @@
 .modal-body label {
     font-weight: 700;
 }
+
+@media screen and (max-width: 430px) {
+    #kpi-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #kpi-detail-left, #kpi-detail-right {
+        width: 100%;
+        height: max-content;
+    }
+
+    #name span {
+        top: -100%;
+        right: 0%;
+        font-size: 14px;
+    }
+}

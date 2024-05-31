@@ -121,7 +121,7 @@ form p {
 
 
 
-@media only screen and (max-width: 430px){
+@media screen and (max-width: 430px){
     .login-box {
         width: 70%;
     }
