@@ -14,9 +14,14 @@ main{
     align-items: center;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     margin-top: 50px;
     border-radius: 10px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.chart1, .chart2 {
+  flex : 1;
 }
 
 .next-prev-button button {
@@ -57,9 +62,7 @@ main{
     margin-bottom: 50px;
 }
 
-#kpi-chart2 {
-    height: 300px;
-}
+
 
 
 
@@ -70,6 +73,7 @@ main{
 .achievement {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   
   .number-of-day, .number-of-kpi, .rate-done {
@@ -89,6 +93,7 @@ main{
   /* Additional styling to ensure proper spacing and alignment */
   .inline {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     justify-content: center;
   }
@@ -112,4 +117,73 @@ main{
     font-size: 27px;
     font-weight: bold;
   }
+
+
+  /* Điều chỉnh giao diện cho màn hình nhỏ hơn 768px (điện thoại di động) */
+@media (max-width: 767px) {
+
+  /* Điều chỉnh main */
+  main {
+    margin: 0px; /* Giảm khoảng cách giữa nội dung và viền */
+  }
+
+  .chart1-header{
+    padding-top: 0px;
+  }
+#kpi-chart {
+  margin-right: 20px;
+}
+
+  .kpi-overview {
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    margin-left: 5px;
+    margin-right: 15px;
+  }
+
+  .chart1, .chart2 {
+    width: 100%; /* Cho phép các biểu đồ chiếm toàn bộ chiều rộng */
+  }
+
+  .chart2 p:first-child {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+  /* Điều chỉnh achievement */
+  .achivement {
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  }
+
+  .number-of-day, .number-of-kpi, .rate-done {
+    width: 100%; /* Cho phép các phần tử chiếm toàn bộ chiều rộng */
+    margin-top: 30px;
+    padding: 20px;
+  }
+  .chart1 {
+    padding-right: 10px;
+  }
+.next-prev-button{
+  padding-left: 20px;
+}
+  .chart1-header{
+    padding-left: 5px;
+    text-align: left;
+}
+.np-button{
+  display: flex;
+}
+
+  .number-of-kpi {
+    border-left: none; /* Xóa đường viền trái và phải */
+    border-right: none;
+  }
+  .number-of-day p, .number-of-kpi p, .rate-done p {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .rate-done {
+    margin-bottom: 50px;
+  }
+}
 
