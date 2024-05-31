@@ -91,7 +91,9 @@
     <!-------------------------------------------------Start main---------------------------------------------->
     <main>
         <div class="edit-profile-container">
-            <h2>Chỉnh sửa thông tin cá nhân</h2>
+            <div class="edit-header">
+                Chỉnh sửa thông tin cá nhân
+            </div>
             <div class="avatar-container">
                 <img src="/src/images/avatar.jpg" class="avatar-img" alt="Avatar">
                 <button id="changeAvatarBtn" class="btn btn-primary"><i class="fas fa-camera"></i></button>
@@ -123,7 +125,7 @@
                     <input type="text" class="form-control" id="phone" value="0123456789" required>
                 </div>
             </form>
-            <button onclick = "document.location = '/src/view/profile.html'" class="btn btn-primary">Lưu Thay Đổi</button>
+            <button onclick = "document.location = '/src/view/profile.html'" class="btn btn-primary" id = "saveButton">Lưu Thay Đổi</button>
         </div>
     </main>
     <!--------------------------------------------------End main----------------------------------------------->
