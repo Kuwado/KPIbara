@@ -2,19 +2,19 @@
     padding-right: 100px;
 }
 
-.login-signup-button button:first-child{
+.login-signup-button button:first-child {
     border: none;
     background-color: #ffffff;
     margin-right: 15px;
     color: #ea4c89;
 }
 
-.login-signup-button button:first-child:hover{
+.login-signup-button button:first-child:hover {
     text-decoration: underline;
     color: #382e2e;
 }
 
-.login-signup-button button:last-child{
+.login-signup-button button:last-child {
     border: 1px solid #ea4c89;
     padding: 5px 10px 5px 10px;
     border-radius: 100px 100px 100px 100px;
@@ -23,36 +23,38 @@
     color: #ffffff;
 }
 
-.login-signup-button button:last-child:hover{
+.login-signup-button button:last-child:hover {
     border: 3px solid #382e2e;
     background-color: #ffffff;
     color: #382e2e;
 }
-/* -------------------content---------------------------- */
-.landing-content {
-    display: flex;
-    justify-content: space-between;
-}
 
-.ld-content {
-    background-image: 
-        linear-gradient(69deg, rgba(234,76,137,0.69) 55%, rgba(94,78,201,1)), 
-        url("/src/images/capybara.jpg");
+/* -------------------content---------------------------- */
+#ld-content {
+    background-image: linear-gradient(69deg, rgba(234, 76, 137, 0.69) 55%, rgba(94, 78, 201, 1)), url("/src/images/capybara.jpg");
     background-size: cover;
     background-position: right;
     background-attachment: fixed;
-    padding-top: 189px;
-    height: 620px;
+    height: calc(100vh - 80px);
+    position: relative;
 }
 
-
-
-.landing-content-right {
-    color: white; /* Thêm màu văn bản để dễ đọc trên nền */
+#ld-text-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 50px;
+    color: white;
+    gap: 30px;
 }
 
-.landing-content-text {
-    margin-left: 100px;
+#ld-btn a {
+    text-decoration: underline;
 }
 
 .landing-content-right-title {
@@ -60,70 +62,18 @@
     font-weight: bold;
 }
 
-.zo button {
-    background-color: transparent;
-    margin-left: 100px;
-    margin-top: 69px;
-    border: none;
-    text-decoration: underline;
-    color: white;
+#ld-img-content {
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    top: 0;
+    left: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.zo button:hover {
-    transform: scale(1.1);
-}
-.landing-content-left {
-    width: 70%;
-    top: 15px;
-}
-.landing-content-left img {
-    transform: translateY(-130px); 
-    width: 130%; 
+#ld-img-content img {
+    width: 100%;
     height: auto;
 }
-/* Điểm dừng cho màn hình nhỏ (điện thoại di động) */
-@media (max-width: 767px) {
-    /* Điều chỉnh kiểu dáng cho màn hình nhỏ */
-    .landing-content {
-      flex-direction: column;
-      align-items: center;
-    }
-    .ld-content {
-        background-image: 
-        linear-gradient(69deg, rgba(234,76,137,0.69) 55%, rgba(94,78,201,1)), 
-        url("/src/images/capybara.jpg");
-        background-size: cover;
-        background-position: right;
-        background-attachment: fixed;
-        padding-top: 189px;
-        height: 620px;
-    }
-  
-    .landing-content-left {
-      width: 80%;
-      margin-bottom: 30px;
-    }
-  
-    .landing-content-right {
-      width: 100%;
-      text-align: center;
-      margin-left: 0;
-    }
-  
-    .landing-content-right-title {
-      font-size: 28px;
-    }
-  
-    .landing-content-right-text {
-      font-size: 16px;
-    }
-  
-    .zo button {
-      font-size: 16px;
-      padding: 10px 20px;
-      margin-left: 0;
-    }
-    header button {
-        display: none;
-    }
-  }

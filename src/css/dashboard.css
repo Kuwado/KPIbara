@@ -1,4 +1,4 @@
-main{
+main {
     display: flex;    
     padding: 100px 50px 20px 50px;
     height: 100vh;
@@ -364,373 +364,49 @@ main{
     display: flex;
 }
 
-
-
-
-
-
-
-
-
-
 #home-calendar-mission-view-all {
     display: flex;
     align-items: center;
     height: fit-content;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.wrapper .heading{
-    width: 50%; 
-    display: flex;
-    align-items: center;
-    padding: 25px 30px 10px;
-    justify-content: space-between;
-    
-}
-.heading .current-date{
-    font-size: 1.45rem;
-    font-weight: 500;
-}
-.heading .icons span{
-    height: 38px;
-    width: 38px;
-    margin: 0 1px;
-    cursor: pointer;
-    color: #878787;
-    font-size: 1.9rem;
-    text-align: center;
-    line-height: 38px;
-    border-radius: 50%;
-}
-.heading .icons span:hover{
-    background: #f2f2f2;
-}
-.heading .icons span:last-child{
-    margin-right: -10px;
-} 
-.calendar{
-    padding: 20px;
-    width: 50%; 
-}
-
-.calendar ul{
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    text-align: center;
-}
-.calendar .days {
-    margin-bottom: 20px;
-
-}
-.calendar .weeks li{
-    font-weight: 500;
-}
-.calendar ul li{
-    position: relative;
-    width: calc(100% / 7);
-}
-.calendar .days li{
-    z-index: 1;
-    cursor: pointer;
-    margin-top: 30px;
-}
-.days li.inactive{
-    color: #aaa;
-}
-.days li.active{
-    color: #fff;
-}
-.calendar .days li::before{
-    position: absolute;
-    content: "";
-    height: 40px;
-    width: 40px;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-}
-.days li:hover::before{ 
-    background: #f2f2f2;
-}
-.days li.active::before{
-    background: #EA4C89;
-}
-.today-misson {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%; 
-    padding: 20px;
-    height: 100%;
-    border-left: 1px rgba(0, 0, 0, 0.50) solid;
-    display: none;
-}
-.today-misson ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.today-misson li {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 20px 0 20px 0;
-    background-color: #f2f2f2;
-    color: #333;
-    font-weight: bold;
-    position: relative;
-}
-
-.today-misson li span.task-name {
-    display: block;
-}
-
-.today-misson li span.task-time {
-    font-size: 12px;
-    color: #888;
-    margin-top: 5px;
-}
-
-.today-misson li span.task-status {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #EA4C89; 
-}
-.view-detail-kpi-button {
-    background-color: #EA4C89;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 15px;
-}
-.view-detail-kpi-button:hover {
-    background-color: #FF7EB5;
-}
-
-.view-all-btn {
-    background-color: #EA4C89;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 87%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.view-all-btn:hover {
-    background-color: #FF7EB5;
-}
-
-.today-misson li:last-child {
-    margin-bottom: 0;
-}
-
-.today-misson li:last-child::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -15px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #EA4C89;
-    transform: translateY(-50%);
-}
-.sidebar-right {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 45vw;
-    background: #fff;
-    height: 80%;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.sidebar-right h4 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.featured-tasks {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    padding-right: 5px;
-    overflow-y: auto;
-    text-align: center; 
-}
-
-.featured-tasks li {
-    margin-bottom: 20px; 
-    font-weight: bold;
-    padding: 15px; 
-    border-radius: 30px 0 30px 0; 
-    background-color: #f2f2f2;
-    color: #333;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-.featured-tasks li span.task-name {
-    display: block;
-}
-
-.featured-tasks li span.task-time {
-    font-size: 12px;
-    color: #888;
-    margin-top: 20px;
-}
-
-.featured-tasks li span.task-progress {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: 8px;
-    background-color: #ddd;
-    border-radius: 4px;
-}
-
-.featured-tasks li span.task-progress .progress-bar {
-    height: 100%;
-    border-radius: 4px;
-    display: block;
-}
-
-.featured-tasks li span.task-progress .progress-bar.active {
-    background-color: #EA4C89;
-}
-
-.featured-tasks li span.task-progress .progress-bar.inactive {
-    background-color: #ddd;
-}
-
-.overview-chart-container {
-    /* position: fixed; */
-    top: 100px; /* Ngay dưới thanh menu */
-    left: 20px;
-    width: 400px; /* Chiều rộng của biểu đồ */
-    height: 300px; /* Chiều cao của biểu đồ */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.overview-chart-container {
-    position: absolute;
-    display: none;
-    top: 100px; /* Cách đầu trang 100px */
-    right: 20px; /* Cách lề phải 20px */
-    width: 400px;
-    height: 300px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    z-index: 1; /* Đặt biểu đồ ở lớp trên */
-  }
-  .wrapper {
-    width: 65vw; /* Giảm kích thước xuống 70% chiều rộng viewport */
-    top: 100px;
-    /* Các quy tắc khác giữ nguyên */
-  }
-  
-  .sidebar-right {
-    width: 25vw; /* Giảm kích thước xuống 25% chiều rộng viewport */
-    /* Các quy tắc khác giữ nguyên */
-  }
-  .sidebar-right {
-    right: 20px; /* Cách lề phải 20px */
-    /* Các quy tắc khác giữ nguyên */
-  }
-
-
-@media (max-width: 576px) {
-    .today-misson {
-      width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
-      border-radius: 0 !important; /* Loại bỏ bo góc */
-      margin: 0; /* Loại bỏ lề */
-      border: none;
-      font-size: 5px !important;
-    }
-    .wrapper {
-        width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
-        border-radius: 0 !important; /* Loại bỏ bo góc */
-        margin: 0;
-        transform: translateY(-36px); 
-
-    }
-    
-    .wrapper .calendar {
-        display: none;
+/* ------------------------------------------------- Responsive ---------------------------------------------------------------*/
+@media screen and (max-width: 430px) {
+    main {
+        flex-direction: column-reverse;
+        height: max-content;
+        padding: 80px 20px;
     }
 
-    .wrapper .heading {
-        display: none;
-    }
-
-    .current-date {
-        font-size: 16px !important;
-    }
-    .icons {
-        font-size: 10px !important;
-    }
-    
-    main{
-        flex-direction: column;
-    }
-    .sidebar-right {
+    #home-right, #home-left {
         width: 100%;
-        right: 0px;
-        transform: translateY(500px); 
-        left: 0px;
-        margin: 0;
-        border-radius: 0; /* Loại bỏ bo góc */
+        height: max-content;
     }
-    .view-all-btn {
-        margin: 0;
-        font-size: 20px;
+
+    #home-calendar-conatiner {
+        height: max-content;
     }
-  
-   
+
+    #home-calendar-today-misson {
+        height: 300px;
+    }
+
+    #overerview {
+        flex-direction: column;
+        height: max-content;
+    }
+
+    #overerview-bar {
+        width: 100%;
+        height: fit-content;
+    }
+
+    #overerview-circle {
+        width: 100%;
+        height: 310px;
+    }
+
+    #best-kpis {
+        display: none;
+    }
 }
